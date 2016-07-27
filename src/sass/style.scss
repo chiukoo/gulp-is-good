@@ -1,6 +1,7 @@
-@import "config/*";
-@import "mixin/*";
-@import "vendor/*";
-@import "partials/*";
-@import "modules/*";
-@import "layout/*";
+.body {
+    height: 100vh;
+    background-color: #eee;
+    + .main {
+        display: block;
+    }
+}

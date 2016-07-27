@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     sass = require('gulp-sass'),
@@ -6,7 +8,7 @@ var gulp = require('gulp'),
 
 
 //編譯sass
-gulp.task('styles', function () {
+gulp.task('gulp-scss', function () {
     return gulp
         .src('./src/sass/*.scss')
         .pipe(sassGlob())
@@ -30,4 +32,4 @@ gulp.task('gulp-imagemin', () =>
 
 
 //要執行的事件
-gulp.task('default',['gulp-styles', 'minify-css', 'gulp-imagemin']);
+gulp.task('default',['gulp-scss', 'minify-css', 'gulp-imagemin']);
