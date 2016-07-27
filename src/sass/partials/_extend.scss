@@ -1,0 +1,12 @@
+.clearfix {
+    @include clearfix;
+}
+
+.overHide {
+    overflow: hidden;
+}
+
+.center {
+    @include center(center);
+}
+

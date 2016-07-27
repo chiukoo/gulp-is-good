@@ -1,22 +1,33 @@
 var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
+    sass = require('gulp-sass'),
+    sassGlob = require('gulp-sass-glob'),
     minifyCSS = require('gulp-minify-css');
 
 
-//壓縮圖片
-gulp.task('gulp-imagemin', () =>
-    gulp.src('./buil/image/*')   //來源資料夾
-        .pipe(imagemin())
-        .pipe(gulp.dest('./image')) //目標資料夾, 如需覆蓋則指定跟來源相同
-);
+//編譯sass
+gulp.task('styles', function () {
+    return gulp
+        .src('./src/sass/*.scss')
+        .pipe(sassGlob())
+        .pipe(sass())
+        .pipe(gulp.dest('dist/css'));
+});
 
 //壓縮css
 gulp.task('minify-css', function() {
-  return gulp.src('./build/css/*.css')
+  return gulp.src('./src/css/*.css')
     .pipe(minifyCSS({keepBreaks:true}))
-    .pipe(gulp.dest('./css'))
+    .pipe(gulp.dest('dist/css'))
 });
+
+//壓縮圖片
+gulp.task('gulp-imagemin', () =>
+    gulp.src('./src/image/*')   //來源資料夾
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/image')) //目標資料夾, 如需覆蓋則指定跟來源相同
+);
 
 
 //要執行的事件
-gulp.task('default',['minify-css', 'gulp-imagemin']);
+gulp.task('default',['gulp-styles', 'minify-css', 'gulp-imagemin']);

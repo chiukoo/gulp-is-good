@@ -6,3 +6,8 @@
 	npm install --save-dev gulp  
 	npm init  
 
+----
+
+update
+
+npm install gulp-sass-glob --save-dev

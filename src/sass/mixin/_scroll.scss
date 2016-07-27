@@ -1,0 +1,4 @@
+@mixin overflow {
+    overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
+}
