@@ -19,4 +19,4 @@ gulp.task('minify-css', function() {
 
 
 //要執行的事件
-gulp.task('default',['minify-css'. 'gulp-imagemin']);
+gulp.task('default',['minify-css', 'gulp-imagemin']);
