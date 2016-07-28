@@ -1,7 +1,3 @@
-.body {
-    height: 100vh;
-    background-color: #eee;
-    + .main {
-        display: block;
-    }
-}
+@import "config/*";
+@import "mixin/*";
+@import "vendor/*";
