@@ -5,8 +5,4 @@
 	npm install --global gulp  
 	npm install --save-dev gulp  
 	npm init  
-3. 此版本需安裝  
-	npm install gulp-minify-css  
-	npm install gulp-imagemin  
-
 
