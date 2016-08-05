@@ -6,9 +6,8 @@
 	npm install --save-dev gulp  
 	npm init  
 
-----
+-----
 
-update
-npm install gulp-compass
-#npm install gulp-sass
-#npm install gulp-sass-glob --save-dev
+```
+npm install gulp-compass gulp-concat gulp-uglify gulp-jade gulp-webserver --save-dev
+```

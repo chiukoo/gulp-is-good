@@ -56,7 +56,7 @@ gulp.task('templates', function() {
 gulp.task('webserver', function() {
   gulp.src('dist/')
     .pipe(webserver({
-      port: 8080,
+      port: 1234,
       livereload: true,
       directoryListing: false,
       open: true,
@@ -72,4 +72,4 @@ gulp.task('watch', function() {
 });
 
 //- 執行的事件
-gulp.task('default', ['webserver', 'templates', 'imagemin', 'compass', 'uglify', 'watch']);
+gulp.task('default', ['webserver', 'imagemin', 'watch']);
