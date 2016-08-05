@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,IAAK,CACH,gBAAgB,CAAE,IAAI,CACtB,UAAM,CACJ,gBAAgB,CAAE,IAAI,CAExB,UAAM,CACJ,KAAK,CAAE,GAAG,CACV,UAAU,CAAE,6+DAAwB,CAEtC,SAAK,CACH,UAAU,CAAE,kCAAoB",
+"sources": ["../sass/style.scss"],
+"names": [],
+"file": "style.css"
+}

@@ -1,0 +1,14 @@
+// 註解測試
+body {
+  background-color: #eee;
+  .main {
+    background-color: #ff0;
+  }
+  .text {
+    color: red;
+    background: inline-image('user.svg');
+  }
+  .img {
+    background: image-url('car.jpg');
+  }
+}

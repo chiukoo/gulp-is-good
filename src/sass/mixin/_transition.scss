@@ -1,9 +1,0 @@
-@mixin trans($key) {
-    @include transition(#{$key} 0.3s ease-in-out);
-}
-
-@mixin tranX($key) {
-    @include translateX($key);
-    @include backface-visibility(hidden);
-    outline: 1px solid transparent;
-}
