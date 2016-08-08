@@ -9,7 +9,10 @@
   "devDependencies": {
     "gulp-compass": "^2.1.0",
     "gulp-concat": "^2.6.0",
+    "gulp-css-globbing": "^0.1.8",
     "gulp-jade": "^1.1.0",
+    "gulp-sass-glob": "^1.0.6",
+    "gulp-sass-globbing": "0.0.2",
     "gulp-uglify": "^2.0.0",
     "gulp-webserver": "^0.9.1"
   },

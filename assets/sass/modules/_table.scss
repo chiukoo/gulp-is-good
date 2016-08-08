@@ -1,0 +1,59 @@
+.table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid $border;
+    caption {
+        color: #000;
+        font: italic 85%/1 $font-family;
+        padding: 1em 0;
+        text-align: center;
+    }
+    thead {
+        background-color: brand-gray(300);
+        color: #000;
+        text-align: left;
+        vertical-align: bottom;
+    }
+    td, th {
+        border-left: 1px solid $border;
+        border-width: 0 0 0 1px;
+        font-size: inherit;
+        margin: 0;
+        overflow: visible;
+        padding: 0.5em 1em;
+    }
+    &:first-child, &:first-child {
+        border-left-width: 0;
+    }
+}
+
+/* nth-child selector for modern browsers */
+.table-striped {
+    tr:nth-child(2n-1) td {
+        background-color: brand-gray(100);
+    }
+}
+
+/* Bordered tables */
+.table {
+    &-bordered {
+        td {
+            border-bottom: 1px solid $border;
+        }
+        tbody > tr:last-child > td {
+            border-bottom-width: 0;
+        }
+    }
+}
+
+/* Horizontal Bordered tables */
+.table {
+    td, th {
+        border-width: 0 0 1px 0;
+        border-bottom: 1px solid $border;
+    }
+    tbody > tr:last-child > td {
+        border-bottom-width: 0;
+    }
+}

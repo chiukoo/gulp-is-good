@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin'); //- 壓縮圖片
 var compass = require('gulp-compass');
+var sassGlob = require('gulp-sass-glob');
 var concat = require('gulp-concat'); //- 合併檔案
 var minifyCSS = require('gulp-minify-css'); //- 壓縮css
 var uglify = require('gulp-uglify'); //- 混淆並壓縮
@@ -19,7 +20,8 @@ gulp.task('imagemin', () =>
 
 //- comass-sass
 gulp.task('compass', function() {
-    return gulp.src('./assets/sass/*.scss')
+    return gulp.src('assets/sass/*.scss')
+        .pipe(sassGlob())
         .pipe(compass({
             sourcemap: true,
             time: true,
@@ -46,7 +48,7 @@ gulp.task('uglify', function() {
 gulp.task('templates', function() {
   var YOUR_LOCALS = {};
 
-  gulp.src('./assets/*.jade')
+  gulp.src(['assets/*.jade', '!assets/_tmp/*.jade'])
     .pipe(jade({
       locals: YOUR_LOCALS
     }))
@@ -56,7 +58,7 @@ gulp.task('templates', function() {
 gulp.task('webserver', function() {
   gulp.src('dist/')
     .pipe(webserver({
-      port: 1234,
+      port: 8080,
       livereload: true,
       directoryListing: false,
       open: true,
@@ -72,4 +74,4 @@ gulp.task('watch', function() {
 });
 
 //- 執行的事件
-gulp.task('default', ['webserver', 'imagemin', 'watch']);
+gulp.task('default', ['webserver', 'compass', 'uglify', 'templates', 'watch', 'imagemin']);

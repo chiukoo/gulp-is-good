@@ -1,0 +1,16 @@
+// Sizing shortcuts
+
+@mixin size($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+@mixin sq-size($size:100%) {
+	@include size($size, $size);
+}
+
+@mixin calc($property, $expression) {
+	#{$property}: -webkit-calc(#{$expression});
+	#{$property}: -moz-calc(#{$expression});
+	#{$property}: calc(#{$expression});
+}

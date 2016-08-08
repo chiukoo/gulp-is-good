@@ -1,0 +1,7 @@
+@mixin pointer-none {
+    -moz-pointer-events:none;
+    -webkit-pointer-events:none;
+    -o-pointer-events:none;
+    -ms-pointer-events:none;
+    pointer-events:none;
+}

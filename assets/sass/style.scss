@@ -1,14 +1,6 @@
-// 註解測試
-body {
-  background-color: #eee;
-  .main {
-    background-color: #ff0;
-  }
-  .text {
-    color: red;
-    background: inline-image('user.svg');
-  }
-  .img {
-    background: image-url('car.jpg');
-  }
-}
+// @import "config/*.scss";
+// @import "mixin/*.scss";
+// @import "vendor/*.scss";
+// @import "partials/*.scss";
+// @import "modules/*.scss";
+// @import "layout/*.scss";
