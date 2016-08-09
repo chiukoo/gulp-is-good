@@ -1,5 +1,5 @@
 @mixin trans($key) {
-    @include transition(#{$key} 0.3s ease-in-out);
+    @include transition($key 0.3s ease-in-out);
 }
 
 @mixin tranX($key) {

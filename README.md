@@ -9,5 +9,5 @@
 -----
 
 ```
-npm install gulp-compass gulp-sass-globbing gulp-concat gulp-uglify gulp-jade gulp-webserver --save-dev
+npm install gulp-compass gulp-sass-globbing gulp-concat gulp-uglify gulp-jade gulp-connect gulp-data --save-dev
 ```

@@ -4,12 +4,18 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-open": "^2.0.0"
   },
   "devDependencies": {
+    "browser-sync": "^2.14.0",
     "gulp-compass": "^2.1.0",
     "gulp-concat": "^2.6.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-connect-multi": "^1.0.8",
+    "gulp-connect-php": "0.0.8",
     "gulp-css-globbing": "^0.1.8",
+    "gulp-data": "^1.2.1",
     "gulp-jade": "^1.1.0",
     "gulp-sass-glob": "^1.0.6",
     "gulp-sass-globbing": "0.0.2",

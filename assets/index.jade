@@ -1,4 +1,3 @@
-//- include _tmp/head.jade
 doctype
 html(lang="zh-tw")
     head
@@ -10,8 +9,12 @@ html(lang="zh-tw")
 
     body
         .mainBody
-            header.page-header header
+            header.page-header
+                .page-member
+                    a.btn.btn-outline.btn-login(data-name="登入")
             main.page-container container
             footer.page-footer footer
 
-        script(src='js/jquery-2.2.3.js')
+        script(src='js/jquery.min.js')
+        script(src='js/nicescroll.min.js')
+        script(src='js/main.min.js')
