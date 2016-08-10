@@ -1,5 +1,5 @@
 //- colors
-$brand-base: #017FFF;
+$brand-base: #20B2AA;
 //- color:nth($brand-base,2)
 
 $brand-gray: (
@@ -25,11 +25,14 @@ $font-l: 1.125rem !default;  //- 18px
 $font-m: .8125rem !default;  //- 13px
 $font-s: .75rem   !default;  //- 12px
 
-$font-family: Helvetica Neue, Helvetica, Arial, 微軟正黑體, Microsoft JhengHei , sans-serif !default;
+$font-family: Helvetica Neue, Helvetica, Arial, 微軟正黑體, Microsoft JhengHei, sans-serif;
+$light-height: 1.65;
 
 //- header
-$header-h:     4rem; //- 16px*4=64px
+$header-h:     3rem; //- 16px*3=48px
 $header-nav-w: 260px;
+$header-txt: white;
+$header-txt-hover: $brand-base;
 
 $nav-subItrm-txt:       white;
 $nav-subItrm-txt-hover: $brand-base;
@@ -45,7 +48,7 @@ $footer-txt-copyright: $brand-base;
 //=================== modules
 
 //- padding
-$ledge-pd: .5rem;
+$ledge-pd: 1rem;
 
 //- border
 $border: 1px solid brand-gray(800);

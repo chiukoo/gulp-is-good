@@ -17,6 +17,7 @@
     "gulp-css-globbing": "^0.1.8",
     "gulp-data": "^1.2.1",
     "gulp-jade": "^1.1.0",
+    "gulp-jade-modules": "^1.0.1",
     "gulp-sass-glob": "^1.0.6",
     "gulp-sass-globbing": "0.0.2",
     "gulp-uglify": "^2.0.0",

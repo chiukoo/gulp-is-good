@@ -113,13 +113,6 @@ video {
     display: inline-block;
 }
 
-html,
-body {
-    height: 100%;
-    overflow-x: hidden;
-    @include overflow;
-}
-
 html {
     font-family: sans-serif;
     line-height: 1.15;

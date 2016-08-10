@@ -3,7 +3,6 @@
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin'); //- 壓縮圖片
 var compass = require('gulp-compass');
-// var sass = require('gulp-sass');
 var sassGlob = require('gulp-sass-glob');
 var concat = require('gulp-concat'); //- 合併檔案
 var minifyCSS = require('gulp-minify-css'); //- 壓縮css
@@ -11,6 +10,10 @@ var uglify = require('gulp-uglify'); //- 混淆並壓縮
 var rename = require("gulp-rename"); //- 重新命名檔案
 var jade = require('gulp-jade'); //- 編譯jade
 var connect = require('gulp-connect-multi')(); //- liveReload
+
+//- 執行的事件
+gulp.task('default', ['imagemin', 'webserver', 'html', 'compass', 'uglify', 'templates', 'watch']);
+
 
 //- 壓縮圖片
 gulp.task('imagemin', () =>
@@ -25,12 +28,10 @@ gulp.task('compass', () =>
     gulp.src('assets/sass/*.scss')
     .pipe(compass({
         config_file: 'assets/config.rb',
-        sourcemap: true,
-        time: true,
-        css: 'assets/css/',
+        css: 'dist/css/',
         sass: 'assets/sass/',
         image: 'assets/image',
-        style: 'compressed' //- 壓縮格式nested, expanded, compact, compressed
+        style: 'expanded' //- 壓縮格式nested, expanded, compact, compressed
     }))
     .pipe(gulp.dest('dist/css/'))
     .pipe(connect.reload())
@@ -69,11 +70,8 @@ gulp.task('html', () =>
 
 //- 監聽的事件
 gulp.task('watch', function() {
-    gulp.watch('assets/sass/*.scss', ['compass']);
+    gulp.watch(['assets/sass/*.scss', 'assets/sass/*/*.scss'], ['compass']);
     gulp.watch('assets/js/*.js', ['uglify']);
-    gulp.watch('assets/*.jade', ['templates']);
+    gulp.watch(['assets/*.jade', 'assets/tmp/*.jade'], ['templates']);
     gulp.watch('dist/*.html', ['html']);
 });
-
-//- 執行的事件
-gulp.task('default', ['imagemin', 'webserver', 'html', 'compass', 'uglify', 'templates', 'watch']);

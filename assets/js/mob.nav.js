@@ -1,18 +1,18 @@
 $(function() {
-    var $wrap = $(".mainBody"),
-        $nav = $(".page-nav"),
-        navBtn = '#nav-btn',
+    var $body = $('html, body'),
+        $wrap = $('.mainBody'),
+        $btnNav = $('#btn-menu'),
         active = 'is-active';
 
-    $(document).on('click', navBtn, toggleNav);
+    $(document).on('click', '#btn-menu', toggleNav);
     $(document).mouseup(function (e) {
-        if (!$nav.is(e.target) && $nav.has(e.target).length === 0) {
+        if (!$btnNav.is(e.target) && $btnNav.has(e.target).length === 0) {
             closeNav();
         }
     });
 
-    function toggleNav(e) {
-        if ($wrap.hasClass(active)) {
+    function toggleNav() {
+        if ($btnNav.hasClass(active)) {
             closeNav();
         } else {
             activeNav();
@@ -20,10 +20,14 @@ $(function() {
     }
 
     function activeNav() {
+        $body.addClass('no-scroll');
+        $btnNav.addClass(active);
         $wrap.addClass(active);
     }
 
     function closeNav() {
+        $body.removeClass('no-scroll');
+        $btnNav.removeClass(active);
         $wrap.removeClass(active);
     }
 
@@ -40,4 +44,3 @@ $(function() {
         });
     });
 });
-

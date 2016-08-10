@@ -1,112 +1,59 @@
-.page {
-    &-header {
-        @include center(space-between);
-        @include size(100%, $header-h);
-        background-color: brand-gray(900);
-        @include pad($ledge-pd);
-        a {
-            display: block;
-            color: white;
-            @include hover {
-                color: $nav-subItrm-txt-hover;
-            }
-        }
-        @include MQ(md) {
-            padding: 0 1rem;
-        }
-    }
-    &-member, &-nav {
-        flex: 2;
-    }
-    &-logo {
-        flex: 3;
-        @include center(center);
-        @include size(100%, $header-h);
-        > a {
-            display: inline-block;
-            width: 100px;
-            max-width: 100px;
-        }
-    }
-    &-nav {
-        text-align: right;
-        .nav {
-            &-function {
-                li {
-                    display: inline-block;
-                }
-            }
+.page-header {
+    color: $header-txt;
+    @include center(space-between);
+    @include size(100%, $header-h);
+    background-color: brand-gray(900);
+    @include pad($ledge-pd);
+    a {
+        display: block;
+        color: $header-txt;
+        @include hover {
+            color: $header-txt-hover;
         }
     }
 }
 
-//- 推推語法
-// @include MQ(tablet) {
-//     .mainBody {
-//         position: relative;
-//         height: 100%;
-//         @include trans(all);
-//         .nav {
-//             @include fill-r;
-//             @include size($header-nav-w, 100%);
-//             background-color: brand-gray(900);
-//             @include tranX(100%);
-//             @include overflow;
-//             &-btn {
-//                 position: absolute;
-//                 right: 100%;
-//                 text-align: center;
-//                 @include sq-size($header-h);
-//                 line-height: $header-h;
-//                 background-color: brand-gray(910);
-//                 cursor: pointer;
-//             }
-//             &-function {
-//                 @include center(flex-end);
-//                 text-align: right;
-//                 margin-right: $header-h + $ledge-pd;
-//             }
-//         }
-//         &.is-active {
-//             cursor: pointer;
-//             @include tranX(-$header-nav-w);
-//         }
-//     }
-// }
-//- 覆蓋語法
+//- 選單列表
+.page-list {
+    border-bottom: 1px solid lighten(brand-gray(900), 5%);
+    li {
+        border-bottom: 1px solid darken(brand-gray(900), 5%);
+        &:nth-child(n+2) {
+            border-top: 1px solid lighten(brand-gray(900), 5%);
+        }
+        a {
+            padding: 1rem;
+        }
+    }
+}
+
+
+//- 行動裝置選單
 @include MQ(tablet) {
     .mainBody {
         position: relative;
         height: 100%;
-        .nav {
-            &-list {
-                position: absolute;
-                top: $header-h;
-                bottom: 0;
-                right: 0;
-                z-index: 1;
-                @include overflow;
-                @include size($header-nav-w, 100%);
-                text-align: left;
-                background-color: brand-gray(900);
-                @include tranX(100%);
-                @include trans(all);
-            }
-            &-btn {
-                font-size: 1.5rem;
-                text-align: center;
-                @include sq-size(2.5rem);
-                line-height: 2.5rem;
-                background-color: brand-gray(910);
-                border-radius: 50%;
-                cursor: pointer;
-            }
+        @include trans(all);
+        .page-nav {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            z-index: 2;
+            @include size($header-nav-w, 100%);
+            background-color: brand-gray(900);
+            @include tranX(100%);
+            @include trans(all);
+            @include overflow;
+            overflow-x: auto;
+        }
+        .btn-menu {
+            @include size($header-h / 2 , $header-h);
         }
         &.is-active {
             cursor: pointer;
             &:before {
                 content: '';
-                position: absolute;
+                position: fixed;
                 z-index: 1;
                 top: $header-h;
                 bottom: 0;
@@ -114,32 +61,29 @@
                 right: 0;
                 background-color: rgba(0,0,0,.7);
             }
-            .nav-list {
-                @include tranX(0);
+        }
+    }
+}
+
+
+@include MQ(tablet) {
+    .mainBody {
+        @if $push {
+            .page-nav {
+                top: 0;
+            }
+            &.is-active {
+                @include tranX(-$header-nav-w);
+            }
+        } @else {
+            .page-nav {
+                top: $header-h;
+            }
+            &.is-active {
+                .page-nav {
+                    @include tranX(0);
+                }
             }
         }
     }
 }
-// @include MQ(md) {
-//     .page-nav {
-//         @include center(space-between);
-//         .nav {
-//             &-function {
-//                 margin-right: $ledge-pd;
-//             }
-//             &-btn {
-//                 display: none;
-//             }
-//             &-list {
-//                 > li {
-//                     display: inline-block;
-//                     > a {
-//                         height: $header-h;
-//                         line-height: $header-h;
-//                         padding: 0 $ledge-pd;
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }

@@ -1,0 +1,8 @@
+- var menu = { '視訊直播': 'live.html', '體育賽事': 'sport.html', '電子遊藝': 'casino.html', '彩票遊戲': 'lottery.html', '在線客服': '#', '優惠活動': '#' };
+
+ul.page-list
+    each val, key in menu
+        if selected == key
+            li.active: a(href=val)= key
+        else
+            li: a(href=val)= key

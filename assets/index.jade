@@ -1,20 +1,17 @@
-doctype
-html(lang="zh-tw")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title Document
-        link(href='css/style.css',rel='stylesheet')
+extends ./tmp/layout.jade
 
-    body
-        .mainBody
-            header.page-header
-                .page-member
-                    a.btn.btn-outline.btn-login(data-name="登入")
-            main.page-container container
-            footer.page-footer footer
+//- web name
+block webTitle
+    title esball
 
-        script(src='js/jquery.min.js')
-        script(src='js/nicescroll.min.js')
-        script(src='js/main.min.js')
+//- web container
+block webContent
+    .page-content.
+        content
+
+//- web footer
+block webFooter
+    .copyright copyright
+
+//- web script
+//- block webScript

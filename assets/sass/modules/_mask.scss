@@ -16,3 +16,8 @@
     -webkit-transition-delay: 0s, .3s, .3s;
     transition: opacity .3s, width .1s .3s, height .1s .3s
 }
+
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
