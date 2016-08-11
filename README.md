@@ -1,13 +1,29 @@
---hey im chiuko--
+# [gulp](https://github.com/wearefractal/gulp)
+-----
+#### 1.install node.js
+#### 2. 全域安装 gulp
+```
+npm install gulp --global
+npm install gulp --save-dev
+npm init
+```
 
-1. 確認你有安裝node.js  
-2. 全局安装 gulp  
-	npm install --global gulp  
-	npm install --save-dev gulp  
-	npm init  
 
 -----
 
+#### Install Plug-in All
+
+- gulp-imagemin
+- gulp-compass
+- gulp-concat
+- gulp-minify-css
+- gulp-uglify
+- gulp-jade
+- gulp-connect-multi
+
+
+
+**Install with npm**
 ```
-npm install gulp-compass gulp-sass-globbing gulp-concat gulp-uglify gulp-jade gulp-connect gulp-data --save-dev
+npm install gulp-imagemin gulp-compass gulp-concat gulp-minify-css gulp-uglify gulp-jade gulp-connect-multi
 ```
