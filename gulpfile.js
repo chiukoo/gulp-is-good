@@ -3,7 +3,6 @@
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin'); //- 壓縮圖片
 var compass = require('gulp-compass');
-var sassGlob = require('gulp-sass-glob');
 var concat = require('gulp-concat'); //- 合併檔案
 var minifyCSS = require('gulp-minify-css'); //- 壓縮css
 var uglify = require('gulp-uglify'); //- 混淆並壓縮

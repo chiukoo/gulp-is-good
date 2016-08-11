@@ -1,7 +1,8 @@
 .page-header {
+    position: relative;
+    z-index: 2;
+    width: 100%;
     color: $header-txt;
-    @include center(space-between);
-    @include size(100%, $header-h);
     background-color: brand-gray(900);
     @include pad($ledge-pd);
     a {
@@ -11,77 +12,148 @@
             color: $header-txt-hover;
         }
     }
-}
-
-//- 選單列表
-.page-list {
-    border-bottom: 1px solid lighten(brand-gray(900), 5%);
-    li {
-        border-bottom: 1px solid darken(brand-gray(900), 5%);
-        &:nth-child(n+2) {
-            border-top: 1px solid lighten(brand-gray(900), 5%);
+    @include MQ(tablet) {
+        .header {
+            &-logo {
+                line-height: $header-h;
+                @include calc(width, "100% - 1.5em");
+                height: 100%;
+            }
+            &-nav {
+                position: absolute;
+                top: 0;
+                right: $ledge-pd;
+            }
         }
-        a {
-            padding: 1rem;
+    }
+    @include MQ(md) {
+        height: auto;
+        .btn-menu {
+            display: none;
         }
     }
 }
 
+//- 選單樣式
+.page-list {
+    a {
+        padding: .5rem 1rem;
+    }
+    @include MQ(tablet) {
+        border-bottom: 1px solid lighten(brand-gray(900), 5%);
+        li {
+            border-bottom: 1px solid darken(brand-gray(900), 5%);
+            &:nth-child(n+2) {
+                border-top: 1px solid lighten(brand-gray(900), 5%);
+            }
+        }
+    }
+    @include MQ(md) {
+        li {
+            display: inline-block;
+        }
+    }
+}
+
+//- 次選單樣式
+.page-subnav {
+    display: table;
+    li {
+        display: table-cell;
+        text-align: center;
+        a {
+            display: inline-block;
+        }
+    }
+    @include MQ(tablet) {
+        width: 100%;
+        @include m-center;
+    }
+    @include MQ(md) {
+        float: right;
+    }
+}
 
 //- 行動裝置選單
+@mixin nav-push {
+    @include trans(all);
+    .page-nav {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+        @include size($header-nav-w, 100%);
+        background-color: brand-gray(900);
+        @include tranX(100%);
+        @include trans(all);
+        @include overflow;
+        overflow-x: auto;
+    }
+    &.is-active {
+        &:before {
+            content: '';
+            position: fixed;
+            z-index: 1;
+            top: $header-h;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0,0,0,.7);
+        }
+    }
+}
+@mixin nav-drop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    background-color: brand-gray(900);
+    @include trans(all);
+}
 @include MQ(tablet) {
     .mainBody {
         position: relative;
         height: 100%;
-        @include trans(all);
-        .page-nav {
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            z-index: 2;
-            @include size($header-nav-w, 100%);
-            background-color: brand-gray(900);
-            @include tranX(100%);
-            @include trans(all);
-            @include overflow;
-            overflow-x: auto;
-        }
         .btn-menu {
             @include size($header-h / 2 , $header-h);
         }
         &.is-active {
             cursor: pointer;
-            &:before {
-                content: '';
-                position: fixed;
-                z-index: 1;
-                top: $header-h;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background-color: rgba(0,0,0,.7);
-            }
         }
-    }
-}
-
-
-@include MQ(tablet) {
-    .mainBody {
-        @if $push {
+        @if $nav == push-left {
+            @include nav-push;
             .page-nav {
                 top: 0;
             }
             &.is-active {
                 @include tranX(-$header-nav-w);
+                &:before {
+                    top: 0;
+                }
             }
-        } @else {
+        } @else if $nav == cover-left {
+            @include nav-push;
             .page-nav {
                 top: $header-h;
             }
             &.is-active {
                 .page-nav {
                     @include tranX(0);
+                }
+                &:before {
+                    top: $header-h;
+                }
+            }
+        } @else if $nav == cover-drop {
+            .page-nav {
+                @include nav-drop;
+            }
+            &.is-active {
+                .page-nav {
+                    max-height: 1000px;
                 }
             }
         }

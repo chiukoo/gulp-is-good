@@ -51,7 +51,8 @@ $footer-txt-copyright: $brand-base;
 $ledge-pd: 1rem;
 
 //- border
-$border: 1px solid brand-gray(800);
+$border: 1px solid brand-gray(700);
+$border-focus: $brand-base;
 
 //- button
 $button: 2.5rem;

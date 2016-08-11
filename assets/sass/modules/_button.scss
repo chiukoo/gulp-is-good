@@ -27,7 +27,7 @@
     border: 1px solid brand-gray(800);
     background-color: transparent;
     @include hover {
-        border: 1px solid $brand-base;
+        border-color: $brand-base;
     }
 }
 

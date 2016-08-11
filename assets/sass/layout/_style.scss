@@ -1,0 +1,18 @@
+.topbar {
+    &-right {
+        li + li {
+            &:before {
+                content: '/';
+            }
+        }
+    }
+}
+
+
+.page-header {
+    .header {
+        &-logo {
+            float: left;
+        }
+    }
+}

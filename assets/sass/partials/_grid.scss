@@ -17,7 +17,7 @@ $susy: (
 $breakpoints: (
     'xs': 320px,
     'sm': 544px,
-    'md': 768px,
+    'md': 769px,
     'lg': 1003px,
     'xl': 1200px
 );
@@ -26,8 +26,8 @@ $breakpoints: (
     @return map-get($breakpoints, $key);
 }
 
-$mobile: max-width breakpoints(sm) - 1;
-$tablet: max-width breakpoints(md) - 1;
+$mobile: max-width breakpoints(sm) + 1;
+$tablet: max-width breakpoints(md) + 1;
 $only-tablet: breakpoints(sm) breakpoints(md)-1;
 
 @mixin MQ($canvas) {

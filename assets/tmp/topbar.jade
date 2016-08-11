@@ -1,0 +1,12 @@
+.page-topbar.clearfix
+    ul.topbar-left
+        li: +link('#', 'sitmap')
+        li
+            .form-selected
+                select(onchange="location = this.options[this.selectedIndex].value;")
+                    option(value="#", selected) 一般版
+                    option(value="#") ..
+                    
+    ul.topbar-right
+        li: +link('#', 'English')
+        li: +link('#', '中文')

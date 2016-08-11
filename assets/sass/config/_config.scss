@@ -1,2 +1,7 @@
-//- 選單顯示方式
-$push: false !default; // true: 推, false: 覆蓋
+/*
+    ▼ 選單顯示方式
+    1. push-left: 往左推
+    2. cover-left: 覆蓋往左(無法使用topbar)
+    3. cover-drop: 覆蓋往下
+*/
+$nav: push-left !default;
