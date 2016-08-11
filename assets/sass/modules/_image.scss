@@ -1,0 +1,14 @@
+.rwd-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+img[src*="_s"] {
+    border: 1px solid red;
+}
+img[src*="_m"] {
+    border: 1px solid blue;
+}

@@ -1,0 +1,60 @@
+.form-checkbox,
+.form-radio {
+    margin: .5rem 0;
+    display: block;
+}
+
+.form-select select {
+    /* Normalizes the height; padding is not sufficient. */
+    height: 2.25rem;
+    border: 1px solid $border;
+    background-color: white;
+    &[multiple] {
+        height: auto;
+    }
+}
+
+.form {
+    label {
+        margin: 0.5rem 0 0.2rem;
+    }
+    fieldset {
+        margin: 0;
+        padding: 0.35rem 0 0.75rem;
+        border: 0;
+    }
+    legend {
+        display: block;
+        width: 100%;
+        padding: 0.3rem 0;
+        margin-bottom: 0.3rem;
+        color: #333;
+        border-bottom: $border;
+    }
+}
+
+
+.form-stacked {
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="url"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="week"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"],
+    input[type="file"],
+    input:not([type]),
+    select,
+    label,
+    textarea {
+        display: block;
+        margin: 0.25rem 0;
+    }
+}

@@ -1,0 +1,15 @@
+$list: hk cn us jp th kr;
+
+@mixin lang-icon() {
+	@each $author in $list {
+		&.lang-#{$author} {
+			background: inline-image("lang/#{$author}.svg") center/contain no-repeat;
+		}
+	}
+}
+
+.lang {
+    display: inline-block;
+    @include sq-size(100%);
+	@include lang-icon;
+}

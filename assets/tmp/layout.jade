@@ -1,0 +1,38 @@
+include mixins.jade
+
+doctype html
+html(lang="zh-tw")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        block webTitle
+            title Document
+        block webCSS
+            link(href='css/style.css',rel='stylesheet')
+
+    body
+        .mainBody
+            //- include topbar
+            header.page-header
+                .page-container
+                    .page-main.clearfix
+                        .header-logo
+                            h1 esball
+                        include subnav
+                    .header-nav
+                        a#btn-menu.btn-menu
+                            span
+                        nav.page-nav
+                            include menu
+            main.page-container
+                .page-container
+                    block webContent
+            footer.page-footer
+                .page-container
+                    block webFooter
+
+        script(src='js/jquery.min.js')
+        script(src='js/mob.nav.min.js')
+        block webScript
+            

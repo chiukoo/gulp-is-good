@@ -1,0 +1,42 @@
+// Center-align a block level element
+
+// Horizontal centering
+@mixin m-center() {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin desplay-flex() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    @include display-flex;
+    @content;
+}
+
+// Vertical centering
+@mixin center($key) {
+    @include display-flex;
+    @include align-items(center);
+    @include justify-content($key);
+    @content;
+}
+// Vertical inline-centering
+@mixin inline-center($key) {
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: -ms-inline-flexbox;
+    @include display-flex(inline-flex);
+    @include align-items(center);
+    @include justify-content($key);
+    @content;
+}
+
+@mixin flex($key) {
+    width: 0%;
+    -webkit-flex: $key;
+    -moz-flex: $key;
+    -ms-flex: $key;
+    -o-flex: $key;
+    flex: $key;
+}

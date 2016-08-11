@@ -1,0 +1,9 @@
+body {
+    font-family: $font-family;
+    line-height: $light-height;
+}
+
+.page-container {
+    max-width: 1000px;
+    @include m-center;
+}

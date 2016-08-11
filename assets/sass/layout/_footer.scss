@@ -1,0 +1,10 @@
+.page-footer {
+    color: $footer-txt;
+    background: $footer-bg;
+    a {
+        color: $footer-txt;
+        @include click {
+            color: $footer-txt-hover;
+        }
+    }
+}

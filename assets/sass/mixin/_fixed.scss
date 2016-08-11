@@ -1,0 +1,23 @@
+@mixin fixed($key) {
+	position: fixed;
+    #{$key}: 0;
+	left: 0;
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+@mixin fill($padding: 0) {
+  position: absolute;
+  top: $padding;
+  bottom: $padding;
+  left: $padding;
+  right: $padding;
+}
+
+@mixin fill-r($padding: 0) {
+  position: absolute;
+  top: $padding;
+  bottom: $padding;
+  right: $padding;
+}

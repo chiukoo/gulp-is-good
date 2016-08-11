@@ -1,0 +1,28 @@
+//- 選單顯示方式使用「推」, 無法使用topbar
+@if $nav == cover-left {
+    .mainBody {
+        .page-topbar {
+            display: none;
+        }
+    }
+} @else {
+    .page-topbar {
+        ul[class*="topbar"] {
+            li {
+                display: inline-block;
+                a {
+                    display: inline-block;
+                    padding: 0 $ledge-pd;
+                }
+            }
+        }
+        .topbar {
+            &-left {
+                float: left;
+            }
+            &-right {
+                float: right;
+            }
+        }
+    }
+}
