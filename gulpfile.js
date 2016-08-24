@@ -9,6 +9,7 @@ var uglify = require('gulp-uglify'); //- 混淆並壓縮
 var rename = require("gulp-rename"); //- 重新命名檔案
 var jade = require('gulp-jade'); //- 編譯jade
 var connect = require('gulp-connect-multi')(); //- liveReload
+var Plumber = require('gulp-plumber'); //watch錯誤後 不中斷
 
 //- 執行的事件
 gulp.task('default', ['imagemin', 'webserver', 'html', 'compass', 'uglify', 'templates', 'watch']);
@@ -25,6 +26,13 @@ gulp.task('imagemin', () =>
 //- comass-sass
 gulp.task('compass', () =>
     gulp.src('assets/sass/*.scss')
+    .pipe(Plumber({
+        errorHandler: function (err) {
+            console.log(err);
+            // watch 才會被通知結束
+            this.emit('end');
+        }
+    }))
     .pipe(compass({
         config_file: 'assets/config.rb',
         css: 'dist/css/',

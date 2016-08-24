@@ -25,5 +25,5 @@ npm init
 
 **Install with npm**
 ```
-npm install gulp-imagemin gulp-compass gulp-concat gulp-minify-css gulp-uglify gulp-jade gulp-connect-multi
+run npm install
 ```
